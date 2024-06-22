@@ -8,7 +8,7 @@ Sample source code, data and models for our [ECTEL 2024](https://ea-tel.eu/ectel
 **Authors:** Bernardo Leite, Tomás Freitas Osório, Henrique Lopes Cardoso
 
 ## Illustrative Example (English → Portuguese)
-![overview_aied24](https://github.com/bernardoleite/fairytaleqa-translated/assets/22004638/292b0703-16b6-4261-9d7b-4f81edf6154f)
+![Captura de ecrã 2024-06-22, às 16 06 38](https://github.com/bernardoleite/fairytaleqa-translated/assets/22004638/41d5a8f7-9d82-496d-8b50-d5f084a40856)
 
 ## Main Features
 * Machine-Translated Data
