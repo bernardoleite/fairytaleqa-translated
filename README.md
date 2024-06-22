@@ -15,6 +15,17 @@ Sample source code, data and models for our [ECTEL 2024](https://ea-tel.eu/ectel
 * Training, inference and evaluation scripts for Question Answering (QA) & Generation (QG)
 * Fine-tuned models for QA & QG
 
+## Machine-Translated Data
+You can find here the machine-translated versions of FairytaleQA:
+* [European Portuguese (pt-PT)](https://huggingface.co/datasets/benjleite/FairytaleQA-translated-ptPT)
+* [Brazilian Portuguese (pt-BR)](https://huggingface.co/datasets/benjleite/FairytaleQA-translated-ptBR)
+* [Spanish](https://huggingface.co/datasets/benjleite/FairytaleQA-translated-spanish)
+* [French](https://huggingface.co/datasets/benjleite/FairytaleQA-translated-french)
+
+We also have included machine-translated datasets for Italian and Romanian, although they were not studied in this research:
+* [Italian](https://huggingface.co/datasets/benjleite/FairytaleQA-translated-italian)
+* [Romanian](https://huggingface.co/datasets/benjleite/FairytaleQA-translated-romanian)
+
 ## Prerequisites
 ```bash
 Python 3 (tested with version 3.8.5 on Ubuntu 20.04.1 LTS)
