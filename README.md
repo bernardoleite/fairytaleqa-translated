@@ -103,10 +103,13 @@ You can change *decoder_info* parameter as follows:
    - question: Decodes question
    - answer: Decodes Answer
 
-### Inference: Example for Question Generation**
+### Inference: Example from local fine-tuned checkpoint (after training)
 Go to `src/model`. The script file `inference_script.sh` is an example for the inference routine.
 
 **Important note**: In `inference_script.sh` (checkpoint_model_path parameter), replace **XX** and **YY** according to epoch number and loss. After infernce, predictions will be saved under `predictions` dolder.
+
+### Inference: Load fine-tuned model directly from Hugging Face
+See [here](https://huggingface.co/benjleite/ptt5-ptpt-qg).
 
 ### Evaluation (Question Generation)
 1.  For QG evaluation, you first need to install/configure [Rouge](https://github.com/google-research/google-research/tree/master/rouge)
