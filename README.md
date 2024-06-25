@@ -43,9 +43,82 @@ You can find here the fine-tuned models for **Question Generation** QG:
 Python 3 (tested with version 3.8.5 on Ubuntu 20.04.1 LTS)
 
 ## Installation and Configuration
-TO DO.
+1. Clone this project:
+    ```python
+    git clone https://github.com/bernardoleite/fairytaleqa-translated
+    ```
+2. Install the Python packages from [requirements.txt](https://github.com/bernardoleite/fairytaleqa-translated/blob/main/requirements.txt). If you are using a virtual environment for Python package management, you can install all python packages needed by using the following bash command:
+    ```bash
+    cd fairytaleqa-translated/
+    pip install -r requirements.txt
+    ```
+
 ## Usage
-TO DO.
+You can use this code for **data preparation**, **training**, **inference/predicting** and **evaluation**.
+
+### Data preparation
+You can download the datasets from the links above (see Machine-Translated Data). Put them in the data folder.
+
+### Training: Example for Question Generation in Portuguese
+1.  Go to `src/model`. The file `train.py` is responsible for the training routine. Type the following command to read the description of the parameters:
+    ```bash
+    python train.py -h
+    ```
+    You can also run the example training script (linux and mac) `train_script.sh`:
+    ```bash
+    bash train_script.sh
+    ```
+    The previous script will start the training routine with predefined parameters:
+    ```python
+    #!/usr/bin/env bash
+    python train.py \
+      --language "ptpt" \
+      --dir_model_name "qg_ptpt_ptt5_base_answer-text_question_seed_45_exp" \
+      --model_name "unicamp-dl/ptt5-base-portuguese-vocab" \
+      --tokenizer_name "unicamp-dl/ptt5-base-portuguese-vocab" \
+      --train_path "../../data/FairytaleQA_Dataset/processed_gen_v2_ptpt/train.json" \
+      --val_path "../../data/FairytaleQA_Dataset/processed_gen_v2_ptpt/val.json" \
+      --test_path "../../data/FairytaleQA_Dataset/processed_gen_v2_ptpt/test.json" \
+      --max_len_input 512 \
+      --max_len_output 128 \
+      --encoder_info "answer_text" \
+      --decoder_info "question" \
+      --max_epochs 1 \
+      --batch_size 16 \
+      --patience 2 \
+      --optimizer "AdamW" \
+      --learning_rate 0.0001 \
+      --epsilon 0.000001 \
+      --num_gpus 1 \
+      --seed_value 45
+    ```
+
+2. In the end, model checkpoints will be available at `checkpoints/checkpoint-name`.
+
+**Note**: You can change *encoder_info* parameter as follows:
+   - answer_text: Encodes answer + text
+   - question_text: Encodes question + text
+  
+You can change *decoder_info* parameter as follows:
+   - question: Decodes question
+   - answer: Decodes Answer
+
+### Inference: Example for Question Generation**
+Go to `src/model`. The script file `inference_script.sh` is an example for the inference routine.
+
+**Important note**: In `inference_script.sh` (checkpoint_model_path parameter), replace **XX** and **YY** according to epoch number and loss. After infernce, predictions will be saved under `predictions` dolder.
+
+### Evaluation (Question Generation)
+1.  For QG evaluation, you first need to install/configure [Rouge](https://github.com/google-research/google-research/tree/master/rouge)
+2.  Go to `src/eval-qg.py` file
+3.  See **preds_path** list and choose (remove or add) additional predictions
+4.  Run `src/eval-qg.py` to computer evaluation scores
+
+### Evaluation (Question Answering)
+1.  For QA evaluation, you first need to install/configure [Rouge](https://github.com/google-research/google-research/tree/master/rouge)
+2.  Go to `src/eval-qa.py` file
+3.  See **preds_path** list and choose (remove or add) additional predictions.
+4.  Run `src/eval-qa.py` to computer evaluation scores
 
 ## Issues and Usage Q&A
 To ask questions, report issues or request features, please use the GitHub Issue Tracker.
