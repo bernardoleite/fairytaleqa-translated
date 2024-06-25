@@ -109,7 +109,7 @@ Go to `src/model`. The script file `inference_script.sh` is an example for the i
 **Important note**: In `inference_script.sh` (checkpoint_model_path parameter), replace **XX** and **YY** according to epoch number and loss. After infernce, predictions will be saved under `predictions` dolder.
 
 ### Inference: Load fine-tuned model directly from Hugging Face
-See this [example for QG in Portuguese](https://huggingface.co/benjleite/ptt5-ptpt-qg).
+See this [example for QG in Portuguese](https://huggingface.co/benjleite/ptt5-ptpt-qg) (under Load Model and Tokenizer).
 You can use any of the fine-tuned models listed above.
 
 ### Evaluation (Question Generation)
