@@ -1,0 +1,6 @@
+special_tokens_pt = ['<nar>', '<atributo>', '<pergunta>', '<reposta>', '<tiporesposta>', '<texto>']
+special_tokens_en = ['<attribute>', '<question>','<answer>','<answertype>','<text>']
+special_tokens_es = ['<nar>', '<atributo>', '<pregunta>', '<respuesta>', '<tiporespuesta>', '<texto>']
+special_tokens_fr = ['<nar>', '<attribut>', '<question>', '<repondre>', '<typeréponse>', '<texte>']
+special_tokens_it = ['<nar>', '<attributo>', '<questione>', '<risposta>', '<tipoquestione>', '<testo>']
+special_tokens_ro = ['<nar>', '<atribut>', '<întrebare>', '<răspundețila>', '<tipîntrebare>', '<text>']
